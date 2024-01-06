@@ -1,0 +1,36 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.calculator-background {
+  background-color: #0b3253;
+  width: 50%;
+  height: 75%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+}
+
+.screen {
+    background-color: white;
+    width: 90%;
+    height: 15%;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    border-radius: 5px;
+}
+
+.entry {
+  font-size: 3em;
+  margin: 0;
+}
