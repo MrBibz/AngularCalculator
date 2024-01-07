@@ -1,5 +1,35 @@
-<div class="calculator-background">
-  <div class="screen">
-    <h1 class="entry">{{ currentNumber }}</h1>
-  </div>
-</div>
+
+  <table class="calculator-background">
+    <tr>
+      <td colspan="3">
+        <input type="text" [(ngModel)]="currentNumber" class="screen">
+      </td>
+      <td>
+        <input type="button" value="C" (click)="clearScreen()" class="button-30">
+      </td>
+    </tr>
+    <tr>
+      <td><input type="button" value="1" class="button-30" (click)="selectedNumber = '1'; updateCurrentNumber(selectedNumber)"></td>
+      <td><input type="button" value="2" class="button-30" (click)="selectedNumber = '2'; updateCurrentNumber(selectedNumber)"></td>
+      <td><input type="button" value="3" class="button-30" (click)="selectedNumber = '3'; updateCurrentNumber(selectedNumber)"></td>
+      <td><input type="button" value="&div;" class="button-30"></td>
+    </tr>
+    <tr>
+      <td><input type="button" value="4" class="button-30" (click)="selectedNumber = '4'; updateCurrentNumber(selectedNumber)"></td>
+      <td><input type="button" value="5" class="button-30" (click)="selectedNumber = '5'; updateCurrentNumber(selectedNumber)"></td>
+      <td><input type="button" value="6" class="button-30" (click)="selectedNumber = '6'; updateCurrentNumber(selectedNumber)"></td>
+      <td><input type="button" value="x" class="button-30"></td>
+    </tr>
+    <tr>
+      <td><input type="button" value="7" class="button-30" (click)="selectedNumber = '7'; updateCurrentNumber(selectedNumber)"></td>
+      <td><input type="button" value="8" class="button-30" (click)="selectedNumber = '8'; updateCurrentNumber(selectedNumber)"></td>
+      <td><input type="button" value="9" class="button-30" (click)="selectedNumber = '9'; updateCurrentNumber(selectedNumber)"></td>
+      <td><input type="button" value="-" class="button-30"></td>
+    </tr>
+    <tr>
+      <td><input type="button" value="0" class="button-30" (click)="selectedNumber = '0'; updateCurrentNumber(selectedNumber)"></td>
+      <td><input type="button" value="." class="button-30"></td>
+      <td><input type="button" value="=" class="button-30"></td>
+      <td><input type="button" value="+" class="button-30"></td>
+    </tr>
+  </table>
