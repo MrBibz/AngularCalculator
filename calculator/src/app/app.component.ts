@@ -8,18 +8,55 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'calculator';
 
-  currentNumber = '0';
-  selectedNumber: string = '';
+  result: string = '0';
+  currentNumber: string = '';
+  currentOperation: string = '';
 
-  clearScreen() {
-    this.currentNumber = '0';
+  clearScreen(): void {
+    this.result = '0';
+    this.currentNumber = '';
+    this.currentOperation = '';
   }
 
-  updateCurrentNumber(value: string) {
-    if (this.currentNumber === '0') {
-      this.currentNumber = value;
+  updateCurrentNumber(value: string): void {
+    if (this.result === '0' || this.result === '-0') {
+      this.result = value;
     } else {
-      this.currentNumber += value;
+      this.result += value;
     }
+  }
+
+  operate(operation: string): void {
+    this.currentNumber = this.result;
+    this.result = '0';
+    this.currentOperation = operation;
+  }
+
+  calculate() {
+    const num1 = parseFloat(this.currentNumber);
+    const num2 = parseFloat(this.result);
+
+    switch (this.currentOperation) {
+      case '+':
+        this.result = (num1 + num2).toString();
+        break;
+      case '-':
+        this.result = (num1 - num2).toString();
+        break;
+      case '*':
+        this.result = (num1 * num2).toString();
+        break;
+      case '/':
+        this.result = (num1 / num2).toString();
+        break;
+      case '%':
+        this.result = (num1 % num2).toString();
+        break;
+      default:
+        break;
+    }
+
+    this.currentNumber = '';
+    this.currentOperation = '';
   }
 }
